@@ -16,7 +16,12 @@ public final class SolveTemplate {
     }
 
     private static void solve(final FastScanner in, final PrintWriter out) {
-        // Write me
+       String input = in.next();
+
+       out.print(input.charAt(0));
+       out.print(" ");
+       out.print(input.charAt(1));
+
     }
 
     private static class FastScanner {
@@ -48,5 +53,6 @@ public final class SolveTemplate {
         try (PrintWriter out = new PrintWriter(System.out)) {
             solve(in, out);
         }
+
     }
 }
