@@ -10,21 +10,18 @@ import java.util.StringTokenizer;
 /**
  * Problem solution template.
  */
-public final class SolveTemplate {
+public class SolveTemplate {
     private SolveTemplate() {
         // Should not be instantiated
     }
 
     private static void solve(final FastScanner in, final PrintWriter out) {
-       String input = in.next();
 
-       out.print(input.charAt(0));
-       out.print(" ");
-       out.print(input.charAt(1));
+
 
     }
 
-    private static class FastScanner {
+    static class FastScanner {
         private final BufferedReader reader;
         private StringTokenizer tokenizer;
 
@@ -49,10 +46,5 @@ public final class SolveTemplate {
     }
 
     public static void main(final String[] arg) {
-        final FastScanner in = new FastScanner(System.in);
-        try (PrintWriter out = new PrintWriter(System.out)) {
-            solve(in, out);
-        }
-
     }
 }
