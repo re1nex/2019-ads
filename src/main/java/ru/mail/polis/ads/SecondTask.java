@@ -6,16 +6,16 @@ import java.util.ArrayList;
 
 public class SecondTask {
     void solve(){
-        FastScanner reader = new FastScanner(System.in);
+        final FastScanner reader = new FastScanner(System.in);
         int num=0;
 
-        String s;
+        String buffer;
 
         ArrayList<Integer> que = new ArrayList<>() ;
 
         do{
-            s=reader.next();
-            switch (s) {
+            buffer=reader.next();
+            switch (buffer) {
                 case "push": {
                     num = reader.nextInt();
                     que.add(num);
@@ -45,7 +45,8 @@ public class SecondTask {
             }
 
 
-        }while (!s.equals("exit"));
+        }
+        while (!buffer.equals("exit"));
 
         System.out.println("bye");
     }

@@ -7,5 +7,5 @@ public class FirstTask {
         Scanner input = new Scanner(System.in);
         int num = input.nextInt();
         System.out.println(num / 10 + " " + num % 10);
-    };
+    }
 }
