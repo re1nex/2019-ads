@@ -11,30 +11,30 @@ public class AvlBst<Key extends Comparable<Key>, Value>
         Value value;
         Node left;
         Node right;
-        int height;
+        int height ;
         Node(Key key_,Value value_)
         {
             key=key_;
            value=value_;
-           right=null;
-           left=null;
         }
     }
    private Node rootNode;
 
     private int bfactor(Node p)
     {
-        return height(p.right)-height(p.left);
+        return height(p.left)-height(p.right);
     }
     private int height(Node p)
     {
+        if(p==null)
+            return 0;
         return p.height;
     }
     private void fixheight(Node p)
     {
         int hl = height(p.left);
         int hr = height(p.right);
-        p.height = (hl>hr?hl:hr)+1;
+        p.height = Math.max(hl,hr)+1;
     }
     private Node rotateright(Node p)
     {
@@ -61,15 +61,15 @@ public class AvlBst<Key extends Comparable<Key>, Value>
         fixheight(p);
         if( bfactor(p)==2 )
         {
-            if( bfactor(p.right) < 0 )
-                p.right = rotateright(p.right);
-            return rotateleft(p);
+            if( bfactor(p.left) < 0 )
+                p.left = rotateright(p.left);
+            return rotateright(p);
         }
         if( bfactor(p)==-2 )
         {
-            if( bfactor(p.left) > 0  )
-                p.left = rotateleft(p.left);
-            return rotateright(p);
+            if( bfactor(p.right) > 0  )
+                p.right = rotateleft(p.right);
+            return rotateleft(p);
         }
         return p;
     }
@@ -156,10 +156,8 @@ public class AvlBst<Key extends Comparable<Key>, Value>
             rootNode.height=1;
             rootNode.value=value;
             rootNode.key=key;
-            rootNode.left=null;
-            rootNode.right=null;
         }
-        else insert(rootNode,key,value);
+        else rootNode=insert(rootNode,key,value);
     }
 
     @Override
