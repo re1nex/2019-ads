@@ -11,7 +11,7 @@ public class AvlBst<Key extends Comparable<Key>, Value>
         Value value;
         Node left;
         Node right;
-        int height ;
+        int height = 1;
         Node(Key key_,Value value_)
         {
             key=key_;
@@ -151,13 +151,7 @@ public class AvlBst<Key extends Comparable<Key>, Value>
 
     @Override
     public void put(Key key, Value value) {
-        if (rootNode==null)
-        {
-            rootNode.height=1;
-            rootNode.value=value;
-            rootNode.key=key;
-        }
-        else rootNode=insert(rootNode,key,value);
+        rootNode=insert(rootNode,key,value);
     }
 
     @Override
@@ -165,7 +159,7 @@ public class AvlBst<Key extends Comparable<Key>, Value>
         Value value;
         if (rootNode == null) return null;
         value=get(key);
-        remove(rootNode,key);
+        rootNode=remove(rootNode,key);
         return value;
     }
 
