@@ -2,7 +2,12 @@ package ru.mail.polis.ads.hash;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
 
 /**
  * Basic tests on {@link HashTable}.
@@ -10,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class HashTableBaseTest {
 
     HashTable<String, String> newTable() {
-        // Use implementation
-        return null;
+
+        return new HashTableR<String,String>();
     }
 
     @Test
